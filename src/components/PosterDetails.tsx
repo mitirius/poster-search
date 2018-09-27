@@ -40,6 +40,7 @@ export default class PosterDetails extends React.PureComponent<Props, State> {
     const poster = this.state.posterDetails;
     return (
       <div className="details">
+        <h5 className="details__title">{poster.title}</h5>
         <img
           className="details__img"
           src={poster.thumb_url_medium}

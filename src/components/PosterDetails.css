@@ -2,6 +2,11 @@
   margin: 1em;
 }
 
+.details__title {
+  font-weight: bold;
+  color: #4298f5;
+}
+
 .details__header {
   font-weight: bolder;
   text-decoration-line: underline;

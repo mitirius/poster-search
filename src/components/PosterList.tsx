@@ -17,7 +17,7 @@ interface State {
 }
 
 export const BASE_PATH = "/events_manager/v3/posters/search";
-const LIMIT = 2;
+const LIMIT = 10;
 
 export default class PosterList extends React.PureComponent<Props, State> {
   state = {
@@ -69,7 +69,7 @@ export default class PosterList extends React.PureComponent<Props, State> {
         this.setState({ pageNum: 0 });
         this.search();
       } else {
-        this.setState({ query: "", posters: [] });
+        this.setState({ query: "", posters: [], pageNum: 0 });
       }
     }
     if (prevState.pageNum !== this.state.pageNum) this.search();
@@ -83,7 +83,8 @@ export default class PosterList extends React.PureComponent<Props, State> {
           onInputChange={this.onInputChange}
         />
         <ul className="poster-list">{this.state.posters.map(renderItem)}</ul>
-        {this.state.posters.length != 0 && (
+        {(this.state.posters.length !== 0 ||
+          (this.state.posters.length === 0 && this.state.pageNum !== 0)) && (
           <Footer
             pageNum={this.state.pageNum}
             prevClicked={this.prevClicked}
