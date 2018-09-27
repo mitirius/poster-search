@@ -8,6 +8,7 @@
 .poster__author--list,
 .poster__keyword--list {
   list-style: none;
+  font-weight: normal;
 }
 
 .poster {
@@ -17,6 +18,12 @@
 
 .poster__img {
   max-width: 40vw;
+  margin-bottom: 1em;
+}
+
+.poster__author,
+.poster__keywords {
+  font-weight: bolder;
 }
 
 @media (min-width: 768px) {

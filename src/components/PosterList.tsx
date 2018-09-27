@@ -81,7 +81,6 @@ export default class PosterList extends React.PureComponent<Props, State> {
         <SearchField
           query={this.state.query}
           onInputChange={this.onInputChange}
-          onKeyEvent={this.onKeyEvent}
         />
         <ul className="poster-list">{this.state.posters.map(renderItem)}</ul>
         {this.state.posters.length != 0 && (
@@ -111,11 +110,12 @@ function renderItem(poster: Poster) {
           <p className="poster__title">{poster.title}</p>
         </Link>
         <ul className="poster__author">
+          authors:
           {!!poster.author_names &&
             poster.author_names.constructor === Array &&
             poster.author_names.map((author, idx) => (
               <li key={idx} className="poster__author--list">
-                authors: {author}
+                {author}
               </li>
             ))}
         </ul>
