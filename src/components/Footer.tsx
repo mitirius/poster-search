@@ -3,8 +3,8 @@ import "./Footer.css";
 
 interface Props {
   pageNum: number;
-  prevClicked(e: any): void;
-  nextClicked(e: any): void;
+  prevClicked(e: React.MouseEvent<HTMLElement>): void;
+  nextClicked(e: React.MouseEvent<HTMLElement>): void;
 }
 
 export default function Footer({ pageNum, prevClicked, nextClicked }: Props) {

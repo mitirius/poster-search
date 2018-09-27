@@ -38,14 +38,14 @@ export default class PosterList extends React.PureComponent<Props, State> {
     }
   };
 
-  prevClicked = (e: any) => {
+  prevClicked = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     this.setState(function(prevState: State) {
       return { pageNum: Math.max(0, prevState.pageNum - 1) };
     });
   };
 
-  nextClicked = (e: any) => {
+  nextClicked = (e: React.MouseEvent<HTMLElement>) => {
     e.preventDefault();
     this.setState(function(prevState: State) {
       return { pageNum: prevState.pageNum + 1 };
@@ -66,6 +66,7 @@ export default class PosterList extends React.PureComponent<Props, State> {
   componentDidUpdate(prevProps: Props, prevState: State) {
     if (prevProps.location.search !== this.props.location.search) {
       if (this.props.location.search !== "") {
+        this.setState({ pageNum: 0 });
         this.search();
       } else {
         this.setState({ query: "", posters: [] });
@@ -80,6 +81,7 @@ export default class PosterList extends React.PureComponent<Props, State> {
         <SearchField
           query={this.state.query}
           onInputChange={this.onInputChange}
+          onKeyEvent={this.onKeyEvent}
         />
         <ul className="poster-list">{this.state.posters.map(renderItem)}</ul>
         {this.state.posters.length != 0 && (
