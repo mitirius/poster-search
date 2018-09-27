@@ -1,0 +1,27 @@
+.poster-list {
+  background-color: #dedede;
+  padding: 0;
+  margin: 0;
+}
+
+.poster,
+.poster__author--list,
+.poster__keyword--list {
+  list-style: none;
+}
+
+.poster {
+  border: 1px solid #eee;
+  padding: 2em;
+}
+
+.poster__img {
+  max-width: 40vw;
+}
+
+@media (min-width: 768px) {
+  .poster-list {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+  }
+}

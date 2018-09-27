@@ -1,0 +1,11 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 1em;
+  font-weight: bolder;
+}
+
+.footer__previous--left,
+.footer__next--right {
+  padding: 0.3em;
+}

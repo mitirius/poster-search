@@ -1,0 +1,15 @@
+.app {
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.app__input {
+  padding: 1em;
+}
+
+@media (min-width: 768px) {
+  .app__input {
+    max-width: 70vw;
+    margin: auto;
+  }
+}
